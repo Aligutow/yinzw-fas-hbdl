@@ -1,0 +1,59 @@
+<div class="cbody">
+	<div class="cwarp">
+		<div class="page-content">
+			<div class="page-header">
+				<h1>
+					<a href="#/org/org_list">部门管理</a> <small> <i class="ace-icon fa fa-angle-double-right"></i> 部门新增
+					</small>
+				</h1>
+			</div>
+			<!-- /.page-header -->
+			<div class="row">
+				<div class="col-xs-12">
+					<form class="form-horizontal" role="form" id="addForm" name="addForm" ng-model="addForm" novalidate>
+						<!-- 1 -->
+						<div class="form-group">
+							<label class="col-xs-3 col-sm-3 control-label no-padding-right">
+								<span class="red">*</span>部门名称
+							</label>
+							<div class="col-xs-6 col-sm-6">
+								<input name="name" type="text" maxlength="45"
+										placeholder="部门名为必填项......" class="col-xs-7 col-sm-7"  style="width:300px" ng-model="addItem.name"  ensure-id=""
+									  required/>
+									  <!-- ensure-name="{{addItem.name}}" -->
+									<i class="ace-icon fa fa-times-circle"
+										ng-show="submitted && addForm.name.$invalid"></i>
+									<i class="ace-icon fa fa-check-circle green" ng-show="addForm.name.$valid"></i>
+									<i class="error" ng-show="submitted && addForm.name.$invalid">
+										<small class="error" ng-show="addForm.name.$error.required"> 部门名称不可为空 </small>
+<!-- 										<small class="error" ng-show="addForm.name.$error.unique"> 部门名称已存在，请重新输入</small> -->
+									</i>
+									
+							</div>
+							<div class="space-4"></div>
+						</div>
+						<!-- 1 -->
+						
+					</form>
+				</div>
+			</div>
+			<div class="clearfix form-actions">
+				<div class="col-md-offset-3 col-md-7">
+					<button class="btn btn-info btn-bold" type="button"  ng-click="saveAddOrg()">
+						<i class="ace-icon fa fa-check bigger-110"></i> 保存
+					</button>
+
+					&nbsp; &nbsp; &nbsp;
+					<button class="btn btn-bold" type="reset" ng-click="clearForm()">
+						<i class="ace-icon fa fa-undo bigger-110"></i> 重置
+					</button>
+
+					&nbsp; &nbsp; &nbsp;
+					<button class="btn btn-bold" type="reset" ng-click="backToList()">
+						<i class="ace-icon fa fa-reply bigger-110"></i> 返回
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

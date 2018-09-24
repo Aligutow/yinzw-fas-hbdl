@@ -1,0 +1,35 @@
+server:
+  context-path: /yinzw
+  port: 8765
+
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:oracle:thin:@127.0.0.1:1521:orcl        
+    username: SCOTT
+    password: tiger
+
+  jpa:   
+    generate-ddl: false
+    show-sql: true
+    hibernate: 
+      ddl-auto: none
+  redis: 
+    host: 127.0.0.1
+    port: 6379
+    password: 
+    #config set requirepass be300e0fec6a47489d8e3d7f5f2a6035
+    
+  #Thymeleaf模板配置
+  thymeleaf:
+    mode: HTML5   #模板的模式，支持HTML,XML,TEXT,JAVASCRIPT等
+    encoding: UTF-8  #编码，可以不用配置
+    content-type: text/html; charset=utf-8  #内容类别，可以不用配置
+    cache: false    #开发配置为false，方便修改模板而不用重启服务
+    prefix: classpath:/templates/  #配置模板路径，默认是templates，可以不用配置
+    
+app:
+  login-path: /login.html 
+  config: 
+    default_pwd: 123456

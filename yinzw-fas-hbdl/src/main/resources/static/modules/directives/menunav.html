@@ -1,0 +1,38 @@
+				<ul class="nav nav-list"><!-- 一级菜单 -->
+					<li class="" ng-repeat="item in navlist">
+					
+						<a href="{{item.href}}" ng-class="(item.children == null || item.children.length == 0)?'':'dropdown-toggle'">
+							<i ng-class="(item.icon == null || item.icon == '')?'menu-icon fa fa-list':'menu-icon fa {{item.icon}}'"></i>
+							<span class="menu-text"> {{item.menuName}} </span>
+							<b ng-class="(item.children == null || item.children.length == 0)?'':'arrow fa fa-angle-down'"></b>
+						</a>
+						<b class="arrow"></b>
+						
+						<ul class="submenu"><!-- 二级菜单 -->
+							<li class="" ng-repeat="subitem in item.children">
+								<a href="{{subitem.href}}" ng-class="(subitem.children == null || subitem.children.length == 0)?'':'dropdown-toggle'">
+									<i class="menu-icon fa fa-caret-right"></i>
+									{{subitem.menuName}}
+									<b ng-class="(subitem.children == null || subitem.children.length == 0)?'':'arrow fa fa-angle-down'"></b>
+								</a>
+
+								<b class="arrow"></b>
+								
+								<ul class="submenu"> <!-- 三级菜单 -->
+									<li class="" ng-repeat="subitem2 in subitem.children">
+										<a href="{{subitem2.href}}">
+										<i class="menu-icon fa fa-caret-right"></i>
+										{{subitem2.menuName}}
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+								</ul>
+								
+								
+							</li>
+						</ul>
+						
+						
+					</li>				
+				</ul>

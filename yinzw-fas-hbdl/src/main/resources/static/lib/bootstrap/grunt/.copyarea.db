@@ -1,0 +1,11 @@
+ClearCase CopyAreaDB|4
+vobs\KF491513_GGFW\si-enterprise\si-enterprise-ui\bower_components\bootstrap\grunt
+2
+7
+9:.jshintrc|1|15331435816|77|8e751f81|bcdbe59fafb94e66853f5bfedcd5951e|0
+19:bs-raw-files-generator.js|1|15331435844|545|14d0a8f3|0604ecefae1b42ae9ec7a0b3094e224e|0
+14:bs-lessdoc-parser.js|1|15331435833|17bb|6d35bf94|ad10cd58957044569bd13dacd43e7867|0
+11:configBridge.json|1|1533143584e|540|e1e17c10|b8e06c11985c4178bb15f67de2ca2b07|0
+18:bs-commonjs-generator.js|1|15331435819|3de|d60e47f7|96689b89356f413182d035122e17f482|0
+12:sauce_browsers.yml|1|15331435852|59f|39bba82d|e82339c79a084f8fa41a21e922fc886a|0
+1f:bs-glyphicons-data-generator.js|1|15331435826|57d|1fb2c64b|9c34acb08e9d468e890d6c7e308fb648|0

@@ -1,0 +1,72 @@
+<div class="cbody">
+	<div class="cwarp">
+		<div class="page-content">
+				<div class="page-header">
+					<h1>
+						<a href="#/org/org_list">部门管理</a> <small> <i class="ace-icon fa fa-angle-double-right"></i> 部门信息
+						</small>
+					</h1>
+				</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="widget-box transparent ui-sortable-handle">
+						<div class="widget-body">
+							<div class="widget-main padding-6 no-padding-left no-padding-right">
+								<!-- 基本信息start -->
+								<div class="profile-user-info profile-user-info-striped">
+									<div class="profile-info-row">
+										<div class="profile-info-name">部门名称</div>
+
+										<div class="profile-info-value">
+											<span id="orgName">{{viewItem.orgName}}</span>
+										</div>
+									</div>
+									<div class="profile-info-row">
+										<div class="profile-info-name">机构类别代码</div>
+
+										<div class="profile-info-value">
+											<span id="orgName">{{viewItem.jglbdm}}</span>
+										</div>
+									</div>
+									<div class="profile-info-row">
+										<div class="profile-info-name">机构类别名称</div>
+
+										<div class="profile-info-value">
+											<span id="orgName">{{showCoder(jglbList,viewItem.jglbdm)}}</span>
+										</div>
+									</div>
+									<div class="profile-info-row">
+										<div class="profile-info-name">部门代码</div>
+
+										<div class="profile-info-value">
+											<span id="orgName">{{viewItem.bmdm}}</span>
+										</div>
+									</div>
+									<div class="profile-info-row">
+										<div class="profile-info-name">信用数据提供单位</div>
+
+										<div class="profile-info-value">
+											<span
+												ng-class="viewItem.supplier==1?'label label-success arrowed':'label label-warning arrowed'"
+												id="supplier">{{viewItem.supplier==1?"是":"否"}}</span>
+										</div>
+									</div>
+								</div>
+								<!-- button -->
+								<div class="form-actions center">
+									<button class="btn btn-bold" ng-click="backToList()">
+										<i class="ace-icon fa fa-reply bigger-110"></i>
+										返回
+									</button>
+								</div>
+								<!-- button -->
+								<!-- 基本信息end -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

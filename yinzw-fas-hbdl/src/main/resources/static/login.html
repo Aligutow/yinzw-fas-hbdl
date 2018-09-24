@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" ng-app="LoginApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>用户登录</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="img/fas_logo_title.png" media="screen" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="assets/css/login.css" type="text/css" rel="stylesheet" />
+<link href="css/loginAdjust.css" type="text/css" rel="stylesheet" />
+<link href="assets/css/login_bg.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript"
+	src="assets/js/jquery.particleground.min.js"></script>
+<script type="text/javascript" src="assets/js/login.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="scripts/loginApp.js"></script>
+<script src="scripts/loginController.js"></script>
+</head>
+<body>
+	<div id="particles">
+		<canvas class="pg-canvas" width="1600" height="721"></canvas>
+	</div>
+	<div class="max">
+		<div class="header">
+			<div class="logo">
+				<div class="logo-center clearfix">
+					<img class="fl" src="img/fas_logo_title.png" alt="财务报销" />
+					<span class="fl">财务报销系统登录</span>
+				</div>
+			</div>
+		</div>
+		<div class="content" ng-controller="loginController">
+			<div class="centerDiv">
+				<form id="form" name="form" ng-model="form" novalidate>
+					<ul class="loginUl">
+<!-- 						<li class="reg"><h2 class="title">登录</h2></li> -->
+						<li class="user">
+							<span></span>
+							<input type="text" placeholder="请输入用户名" id="username" name="username" ng-model="username" required class="input"/>
+						</li>
+						<li class="psw">
+							<span></span>
+							<input type="password" placeholder="请输入密码" id="password" name="password" ng-model="password" required  class="input"/>
+						</li>
+						<li>
+							<span>输入验证码：</span>
+							<input type="text" class="imgCode input" ng-class="imgCodeChecked === '0' ? 'error' : ''" ng-model="validateCode" ng-blur="checkValidateCode()">
+							 <img id="imgCode" src="{{src}}" alt="" ng-click="flushValidateCode()" style="vertical-align:middle;"/>
+       						<label ng-click="flushValidateCode()" style="margin-left:20px;  font-size:12px; cursor:pointer; color:blue;">点击刷新</label>
+						</li>
+						<li><button id="btnLogin" type="button" ng-click="login()" >登&nbsp;录</button></li> 
+<!-- 						ng-disabled="form.$invalid || imgCodeChecked === '0' || imgCodeChecked === ''" -->
+						<li><button id="btnRegister" type="button" ng-click="register()">注&nbsp;册</button></li>
+						<li class="forget"><span class="tip"></span></li>
+					</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

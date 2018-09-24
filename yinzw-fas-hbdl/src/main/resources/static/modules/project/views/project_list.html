@@ -1,0 +1,111 @@
+<div class="cbody">
+	<div class="cwarp">
+		<div class="page-content">
+			<!-- 搜索 starts -->
+			<div class="row">
+				<h3 class="header smaller lighter blue">项目管理</h3>
+				<div class="col-xs-12 col-search">
+					<div class="col-sm-12 ">
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 项目名称&nbsp</label>
+								<div class="col-sm-10">
+									<input type="text" id="form-field-1" ng-model="searchItem.username"
+										maxlength="100" placeholder="请输入项目名进行查询" class="col-xs-12" />
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 甲方单位&nbsp</label>
+								<div class="col-sm-10">
+									<input type="text" id="form-field-1" ng-model="searchItem.name"
+										maxlength="100" placeholder="请输入编号进行查询" class="col-xs-12" />
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<p>
+								<button class="btn btn-warning btn-sm search" ng-click="query()">
+									<i class="ace-icon fa fa-search bigger-110 icon-only"></i>
+								</button>
+								<button class="btn btn-info btn-sm" title="重置" ng-click="clear()">
+									<i class="ace-icon fa fa-undo bigger-110 icon-only"></i>
+								</button>
+							</p>
+						</div>
+						<div class="space-1"></div>
+					</div>
+				</div>
+				<!-- 搜索 end -->
+				<!-- 表格区 starts -->
+				<div class="row">
+					<div id="dynamic-table_wrapper" class="col-sm-12 dataTables_wrapper form-inline no-footer">
+						<div class="row">
+							<div class="col-xs-7 x-toolbar">
+								<p>
+									<button class="btn btn-success btn-bold" ng-click="addUser()">
+										<i class="ace-icon fa fa-pencil-square-o"></i> 新增
+									</button>
+<!-- 									<button class="btn btn-yellow btn-bold" ng-click="viewUserMenus()"> -->
+<!-- 										<i class="glyphicon	glyphicon-user"></i> 查看用户权限 -->
+<!-- 									</button> -->
+<!-- 									<button class="btn btn-primary btn-bold" ng-click="addUserRoles()"> -->
+<!-- 										<i class="glyphicon glyphicon-list"></i> 管理用户角色 -->
+<!-- 									</button> -->
+								</p>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+				<table id="dynamic-table"
+					class="table table-striped table-bordered table-hover dataTable no-footer DTTT_selectable"
+					role="grid" aria-describedby="dynamic-table_info">
+					<thead>
+						<tr role="row">
+							<th style="width: 80px;">是否验收</th>
+							<th class="hidden-480">项目名称</th>
+							<th style="width: 200px;">开始日期</th>
+							<th style="width: 150px;">结束日期</th>
+							<th style="width: 160px;">项目状态</th>
+							<th style="width: 160px;">付款情况</th>
+							<th style="width: 160px;">甲方单位</th>
+							<th style="width: 160px;">合同金额</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in items" class="center">
+							<td style="width: 60px;"><label class="pos-rel">
+									<input type="radio" name="radio-col" value="{{item.id}}" class="ace"
+										ng-model="selectedUserId" />
+									<span class="lbl"></span>
+								</label>
+							</td>
+							<td style="width: 80px;"><span
+								ng-class="item.accountState==1?'label label-success arrowed':'label label-warning arrowed'">{{item.accountState==1?"正常":"不可用"}}</span>
+							</td>
+							<td>{{item.account}}</td>
+							<td>{{item.username}}</td>
+							<td>{{orgMap[item.orgId]}}</td>
+							<td>{{roleMap[item.roleId]}}</td>
+							<td style="width: 150px;">{{item.buildDate | date:'yyyy-MM-dd HH:mm:00'}}</td>
+							<td style="width: 160px;"></td>
+							
+							
+						</tr>
+					</tbody>
+				</table>
+				<!--  分页 start -->
+				<div class="left" uib-pagination total-items="totalItems" page="currentPage" first-text="首页"
+					last-text="尾页" ng-model="currentPage" items-per-page="{{pagesize}}" previous-text="上一页"
+					next-text='下一页' max-size="maxSize" ng-change="pageChanged()" class="pagination-sm"
+					boundary-links="true"></div>
+				<!--  分页  end-->
+			</div>
+		</div>
+	</div>
+	<!-- pageContent end -->
+</div>

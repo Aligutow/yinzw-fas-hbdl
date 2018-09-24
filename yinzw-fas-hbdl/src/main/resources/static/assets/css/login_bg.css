@@ -1,0 +1,72 @@
+
+* {
+	text-align: center;
+	padding: 0;
+	margin: 0 auto;
+	font-size: 14px;
+	font-family: '微软雅黑';
+}
+a img{border:0;}
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	background: #438eb9;
+}
+
+#particles {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position:absolute;
+	z-index:-1;
+}
+
+.max {
+ 	z-index: 999;
+ 	margin:0 auto;
+ 	margin-top:4%;
+ 	text-align:center;
+	width: 573px;
+	height: 566px;
+}
+
+.centerDiv {
+	width: 573px;
+}
+
+.footer {
+	color: #999;
+	margin-top:0px;
+}
+
+.header, .logo {
+	height: 74px;
+	width:573px;
+	overflow:hidden;
+}
+
+.logo a {
+	left: 19px;
+	top: 10px;
+}
+
+.content {
+	height: 430px;
+}
+
+.loginUl {
+	margin-left: 59px;
+}
+ .diwen{	
+ background:url(images/diwen.png) no-repeat right bottom; width:363px; height:137px; position:absolute;z-index: 0;
+    right: -157px;
+    bottom: -15px;
+	
+     filter:Alpha(opacity=30);
+      opacity: 0.3;
+}
+.loginUl{height:370px;}

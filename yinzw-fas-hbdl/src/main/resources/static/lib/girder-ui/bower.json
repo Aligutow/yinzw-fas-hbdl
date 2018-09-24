@@ -1,0 +1,43 @@
+{
+  "name": "girder-ui",
+  "description": "girder ui component",
+  "version": "0.1.0",
+  "main": [
+    "girder-ui.min.js",
+    "girder-ui-tpl.js",
+    "girder-ui.css"
+  ],
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "wyf",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "^1.4.7",
+    "bootstrap": "^3.2.0",
+    "angular-cookies": "^1.4.7",
+    "angular-resource": "^1.4.7",
+    "angular-route": "^1.4.7"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "src",
+    "demo",
+    ".travis.yml",
+    ".editorconfig",
+    ".gitignore",
+    "gulpfile.js",
+    "package.json"
+  ],
+  "devDependencies": {
+    "angular-mocks": "^1.4.7"
+  }
+}

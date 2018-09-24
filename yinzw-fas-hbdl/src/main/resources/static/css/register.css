@@ -1,0 +1,51 @@
+@charset "UTF-8";
+ul{
+	list-style:none;
+}
+.red{
+	opacity:1!important;
+	color:red!important;
+}
+.thide{
+	opacity:0!important;
+}
+body{
+	background-color:#f8f8f8;
+}
+.wrapper .top i{
+	display:block;
+	margin-left:10px;
+	width:30px;
+	height:30px;
+	background: url('../img/arrow_left.png') no-repeat 0px 0px/30px 30px;
+}
+.wrapper .top i:hover{
+	background-color:#f3f3f3;
+	cursor:pointer;
+}
+.wrapper .content{
+	width:630px;
+	margin:auto;
+	
+}
+.wrapper .content li{
+	margin:20px;
+}
+
+.wrapper .content li input{
+	width:240px;
+}
+.wrapper .content li:last-child textarea{
+	resize:none;
+}
+.wrapper .content li .cbox{
+	width:15px;
+	height:15px;
+	margin-left:50px;
+}
+.wrapper .content li label:first-child{
+	display:inline-block;
+	width:160px;
+	height:28px;
+	text-align:right;
+}

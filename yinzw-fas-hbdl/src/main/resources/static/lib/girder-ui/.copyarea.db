@@ -1,0 +1,12 @@
+ClearCase CopyAreaDB|4
+vobs\KF491513_GGFW\si-enterprise\si-enterprise-ui\bower_components\girder-ui
+2
+8
+b:.bower.json|1|15331435cf2|2f4|ae3c99e|94027e2997a94f22b0ec623cb8133216|0
+c:girder-ui.js|1|15331435d7d|1c3f4|92fbcc6f|2feba4209ab94156bbb0f9ab4ad79a58|0
+10:girder-ui-tpl.js|1|15331435cfa|366c|698681e4|d2719069684244ebbd216919c72f7969|0
+11:girder-ui.min.css|1|15331435d8c|ab4|c45ce3e9|cf9f20009af54d268404f5bd51ebdbfc|0
+a:bower.json|1|15331435cf5|2f4|ae3c99e|98255c23318f4bba95116b742f09516e|0
+c:CHANGELOG.md|1|15331435dd1|252|29092db6|e04b8d793bb145b7a3f2ab2212e118b8|0
+d:girder-ui.css|1|15331435d04|d34|d5cf6f9a|79950ae24fb14c4fbfea2629d4e52193|0
+10:girder-ui.min.js|1|15331435db3|aaa3|a510ef0b|a34b080bacf443599bebe6eaac7ff464|0

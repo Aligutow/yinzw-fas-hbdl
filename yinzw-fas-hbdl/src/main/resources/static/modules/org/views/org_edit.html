@@ -1,0 +1,126 @@
+<div class="cbody">
+	<div class="cwarp">
+			<div class="page-content">
+				<div class="page-header">
+					<h1>
+						<a href="#/org/org_list">部门管理</a> <small> <i class="ace-icon fa fa-angle-double-right"></i> 部门修改
+						</small>
+					</h1>
+				</div>
+				<!-- /.page-header -->
+				<div class="row">
+					<div class="col-xs-12">
+						<form class="form-horizontal" role="form" id="editForm" name="editForm" ng-model="editForm" novalidate>
+						<!-- 1 -->
+							<div class="form-group">
+								<label class="col-xs-3 col-sm-3 control-label no-padding-right">
+								    <span class="red">*</span>行政区划
+								</label>
+								<div class="col-xs-6 col-sm-6 ">
+									<tree-dropdown class="tree-dropdown" data="xzqhTreeData" selected="selectedXzqh" ></tree-dropdown>
+								</div>
+								<div class="space-4"></div>
+							</div>
+							<div class="form-group">
+							<label class="col-xs-3 col-sm-3 control-label no-padding-right">
+								<span class="red">*</span>机构类别
+							</label>
+							<div class="col-xs-6 col-sm-6">
+									 <select name="jglb" class="col-xs-7 col-sm-7" style=" width: 300px;" ng-model="editItem.jglbdm" required>
+										<option value="" selected="selected">--请选择--</option>
+										<option ng-repeat="lb in jglbList" value={{lb.key}}>{{lb.key}}{{lb.value}}</option>
+									</select>
+									<i class="ace-icon fa fa-times-circle"
+										ng-show="submitted && editForm.jglb.$invalid"></i>
+									<i class="ace-icon fa fa-check-circle green" ng-show="editForm.jglb.$valid"></i>
+									<i class="error" ng-show="submitted && editForm.jglb.$invalid">
+										<small class="error" ng-show="editForm.jglb.$error.required"> 机构类别不可为空 </small>
+										<small class="error" ng-show="editForm.orgName.$error.unique"> 部门名称已存在，请重新输入</small>
+									</i>
+									
+							</div>
+							<div class="space-4"></div>
+						</div>
+							<!-- 1 -->
+							<div class="form-group">
+								<label class="col-xs-3 col-sm-3 control-label no-padding-right">
+									<span class="red">*</span>部门名称
+								</label>
+								<div class="col-xs-6 col-sm-6">
+								
+								<!-- 考虑到修改是否为信用数据提供单位 ，注释该唯一性验证代码ensure-id="{{editItem.id}}"
+									ensure-orgname="{{editItem.orgName}}"  ensure-jglbdm="{{editItem.jglbdm}}"  ng-focus="chooseJglbdm(editItem.jglbdm)" -->
+									
+									<input name="orgName" type="text" maxlength="45"
+											placeholder="部门名为必填项......" class="col-xs-7 col-sm-7"  style="width:300px" ng-model="editItem.orgName"  required/>
+										<i class="ace-icon fa fa-times-circle"
+											ng-show="submitted && editForm.orgName.$invalid"></i>
+										<i class="ace-icon fa fa-check-circle green" ng-show="editForm.orgName.$valid"></i>
+										<i class="error" ng-show="submitted && editForm.orgName.$invalid">
+											<small class="error" ng-show="editForm.orgName.$error.required"> 部门名称不可为空 </small>
+											<small class="error" ng-show="editForm.orgName.$error.unique"> 部门名称已存在，请重新输入</small>
+										</i>
+								</div>
+								<div class="space-4"></div>
+							</div>
+							
+						<div class="form-group">
+							<label class="col-xs-3 col-sm-3 control-label no-padding-right">
+								<span class="red">*</span>部门代码
+							</label>
+							<div class="col-xs-6 col-sm-6"><!-- 考虑到修改是否为信用数据提供单位 ，注释该唯一性验证代码ensure-id="{{editItem.id}}" ensure-bmdm="{{editItem.bmdm}}"  ensure-jglbdm="{{editItem.jglbdm}}"  -->
+								<input name="bmdm" type="text" maxlength="45"
+										placeholder="部门代码为必填项，由4位纯数字拼接组成......" class="col-xs-9 col-sm-9"  style="width:300px" ng-pattern="/^\d{4}$/"  maxlength="4"   ng-model="editItem.bmdm"   required/>
+									<i class="ace-icon fa fa-times-circle"
+										ng-show="submitted && editForm.bmdm.$invalid"></i>
+									<i class="ace-icon fa fa-check-circle green" ng-show="editForm.bmdm.$valid"></i>
+									<i class="error" ng-show="submitted && editForm.bmdm.$invalid">
+										<small class="error" ng-show="editForm.bmdm.$error.required"> 部门代码不可为空 </small>
+										<small class="error" ng-show="editForm.bmdm.$error.maxlength"> 部门代码编号最大长度为4个字符</small>
+										<small class="error" ng-show="editForm.bmdm.$error.pattern"> 部门代码编号由4位纯数字拼接组成 </small>
+										<small class="error" ng-show="editForm.bmdm.$error.unique"> 部门代码已存在，请重新输入</small>
+									</i>
+							</div>
+							<div class="space-4"></div>
+						</div>
+							<div class="form-group">
+								<label class="col-xs-3 col-sm-3 control-label no-padding-right">
+									<span class="red">*</span>信用数据提供单位
+								</label>
+								<div class="col-xs-4 col-sm-4 ">
+									<div class="radio ">
+										<span class="block input-icon input-icon-right "> <label>
+												<input name="supplier" type="radio" class="ace" value="1" ng-model="editItem.supplier" required />
+												<span class="lbl"> 是</span>
+											</label> <label>
+												<input name="supplier" type="radio" class="ace" value="0" ng-model="editItem.supplier"required />
+												<span class="lbl"> 否</span>
+											</label>
+										</span>
+									</div>
+								</div>
+								<div class="space-5"></div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- 生成编码时loading框 -->
+				<div  id="zbsjxFloatDiv"   ng-show="isShowPic">
+		      			 <img alt="" src="assets/img/green_loading.gif">
+		       			<div style="z-index:99999;line-height:10px;">编码生成中... ...  </div>
+				 </div>
+				<div class="clearfix form-actions">
+					<div class="col-md-offset-3 col-md-7">
+						<button class="btn btn-info btn-bold" type="button"  ng-click="saveEditOrg()">
+							<i class="ace-icon fa fa-check bigger-110"></i> 保存
+						</button>
+
+						&nbsp; &nbsp; &nbsp;
+						<button class="btn btn-bold" type="reset" ng-click="backToList()">
+							<i class="ace-icon fa fa-reply bigger-110"></i> 返回
+						</button>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>

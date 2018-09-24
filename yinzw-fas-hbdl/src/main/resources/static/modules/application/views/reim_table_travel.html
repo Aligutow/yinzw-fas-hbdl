@@ -1,0 +1,161 @@
+<div class="cbody">
+	<div class="cwarp">
+		<div class="page-content">
+			<div class="page-header">
+				<h1>
+					<a href="#">申请报账</a>
+					<small> <i class="ace-icon fa fa-angle-double-right"></i> 报账单填写</small>
+					<small> <i class="ace-icon fa fa-angle-double-right"></i> 差旅报销单</small>
+				</h1>
+			</div>
+			<!-- /.page-header -->
+			<div class="row">
+				<div class="col-xs-12">
+					<form class="form-horizontal" role="form" id="reimTravelForm" name="reimTravelForm" ng-model="reimTravelForm"
+						novalidate>
+						
+						<br><br><br>
+						<!-- one -->
+						<div class="form-group">
+							<label class="col-xs-1 col-sm-1 control-label no-padding-right">
+								<span class="red">*</span>
+								出差事由
+							</label>
+							<div class="col-xs-7 col-sm-7">
+								<input name="reason" type="text" placeholder="" class="col-xs-9 col-sm-9"
+									 maxlength="200"  required style="border:none; border-bottom:1px solid #ccc;">
+<!-- 									 ng-model="reimTravelForm.reason" -->
+								<i class="ace-icon fa fa-times-circle"
+									ng-show="submitted && reimTravelForm.reason.$invalid"></i>
+								<i class="ace-icon fa fa-check-circle green" ng-show="reimTravelForm.reason.$valid"></i>
+								<i class="error" ng-show="submitted && reimTravelForm.reason.$invalid">
+									<small class="error" ng-show="reimTravelForm.reason.$error.required">出差事由不能为空 </small> 
+								</i>
+							</div>
+							<div class="space-4"></div>
+						</div>
+						<!-- one -->
+
+						<div class="form-group">
+							<label class="col-xs-1 col-sm-1 control-label no-padding-right"> 关联项目</label>
+							<div class="col-xs-6 col-sm-6">
+								<tree-dropdown class="tree-dropdown" data="proTreeData" selected="selectedPro"></tree-dropdown>
+							</div>
+							<div class="space-5"></div>
+						</div> 
+						<br><br><br>
+						
+						<!-- 交通费用明细区域start -->
+						<div class="form-group">
+							<label class="col-xs-1 col-sm-1 control-label no-padding-right">交通费用明细区域</label>
+							<table id="dynamic-table"
+										class="col-xs-12 col-sm-12 table table-striped table-bordered table-hover dataTable no-footer DTTT_selectable"
+										role="grid" aria-describedby="dynamic-table_info">
+								<thead>
+									<tr class="center">
+										<th width="140px">出发日期</th>
+										<th>出发地</th>
+										<th>到达日期</th>
+										<th width="90px">交通工具</th>
+										<th width="90px">金额</th>
+										<th width="90px">发票说明</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="center">
+										<td><input type="date" value="2018-06-14" style="height:32px;"/></td>
+										<td><input type="text" style="height:32px;"></td>
+										<td><input type="date" value="2018-06-14" style="height:32px;"/></td>
+										<td><input type="text" style="height:32px;"></td>
+										<td><input type="text" style="height:32px;"></td>
+										<td><input type="text" style="height:32px;"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-1 col-sm-1 control-label no-padding-right"> 交通费用合计</label>
+							<div class="col-xs-6 col-sm-6">
+								<input name="project" type="text" placeholder="" class="col-xs-9 col-sm-9"
+									ng-model="reimTravelForm.travelFee" maxlength="45" style="border:none; border-bottom:1px solid #ccc;">
+							</div>
+							<div class="space-5"></div>
+						</div> 
+						<br><br><br>
+						<!-- 交通费用明细区域end -->
+						
+						<!-- 其他费用明细区域start -->
+						<div class="form-group">
+							<label class="col-xs-1 col-sm-1 control-label no-padding-right">其他费用明细区域</label>
+							<table id="dynamic-table"
+										class="col-xs-12 col-sm-12 table table-striped table-bordered table-hover dataTable no-footer DTTT_selectable"
+										role="grid" aria-describedby="dynamic-table_info">
+								<thead>
+									<tr class="center">
+										<th width="140px">出发日期</th>
+										<th>出发地</th>
+										<th>到达日期</th>
+										<th width="90px">交通工具</th>
+										<th width="90px">金额</th>
+										<th width="90px">发票说明</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="center">
+										<td><input type="date" value="2018-06-14" style="height:32px;"/></td>
+										<td><input type="text" style="height:32px;"></td>
+										<td><input type="date" value="2018-06-14" style="height:32px;"/></td>
+										<td><input type="text" style="height:32px;"></td>
+										<td><input type="text" style="height:32px;"></td>
+										<td><input type="text" style="height:32px;"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-1 col-sm-1 control-label no-padding-right"> 其他费用合计</label>
+							<div class="col-xs-6 col-sm-6">
+								<input name="project" type="text" placeholder="" class="col-xs-9 col-sm-9"
+									ng-model="reimTravelForm.travelFee" maxlength="45" style="border:none; border-bottom:1px solid #ccc;">
+							</div>
+							<div class="space-5"></div>
+						</div> 
+						<br><br><br>
+						<!-- 其他费用明细区域end -->
+						
+						
+						<!-- 预报销差旅费合计 -->
+						<div class="form-group">
+							<label class="col-xs-1 col-sm-1 control-label no-padding-right"> 预报销费用合计</label>
+							<div class="col-xs-6 col-sm-6">
+								<input name="project" type="text" placeholder="" class="col-xs-9 col-sm-9"
+									ng-model="reimTravelForm.travelFee" maxlength="45" style="border:none; border-bottom:1px solid #ccc;">
+							</div>
+							<div class="space-5"></div>
+						</div> 
+						
+						<!-- 备注 -->
+						<div class="form-group">
+							<label class="col-xs-1 col-sm-1 control-label no-padding-right"> 备注</label>
+							<div class="col-xs-6 col-sm-6">
+								<input name="project" type="text" placeholder="" class="col-xs-9 col-sm-9"
+									ng-model="reimTravelForm.travelFee" maxlength="45" style="border:none; border-bottom:1px solid #ccc;">
+							</div>
+							<div class="space-5"></div>
+						</div> 
+						
+						<div class="col-md-offset-3 col-md-7">
+						<button class="btn btn-info btn-bold" type="button" 
+							ng-click="saveAddUser()">
+							<i class="ace-icon fa fa-check bigger-110"></i>
+							保存
+						</button>
+					</div>
+						
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

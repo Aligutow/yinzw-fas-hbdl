@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>用户注册</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="img/fas_logo_title.png" media="screen" />
+<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="css/register.css">
+<script src="lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="scripts/registerController.js"></script>
+</head>
+<body>
+	<div class = "wrapper" ng-app="registerApp" ng-controller="registerController">
+		<div class = "row top">
+			<i ng-click="backToLogin()"></i>
+		</div>
+		<form action="" name ="form" novalidate>
+			<ul class="content">
+				<li>
+					<label><em ng-show="form.account.$error.required" class="red">*</em>用户名：</label>
+					<input type="text" name="account"  ng-model="account" maxlength="18"  placeholder="3-18位数字或字母" required>
+					<label></label>
+				</li>
+				<li>
+					<label><em ng-class="(password ==''||password == undefined||password ==null)?'red':'thide'">*</em>密码：</label>
+					<input type="password" name="password" ng-model="password" maxlength="12" placeholder="6-12位数字或字母" required">
+					<label ng-show=""></label>
+				</li>
+				<li>
+					<label "><em ng-show="form.companyName.$error.required" class="red" >*</em>公司名称:</label>
+					<input type="text" name="companyName" ng-model="companyName" placeholder=""  required>
+					<label></label>
+				</li>
+				<li>
+					<label><em ng-class="(leader ==''||leader == undefined||leader ==null)?'red':'thide'">*</em>负责人：</label>
+					<input type="text" name="leader" ng-model="leader" placeholder="" required>
+					<label></label>
+				</li>
+				<li>
+					<label><em ng-class="(phone ==''||phone == undefined||phone ==null)?'red':'thide'">*</em>联系电话：</label>
+					<input type="text" name="phone" ng-model="phone" placeholder="" required>
+					<label></label>
+				</li>
+				<li>
+					<label><em ng-class="(postcode ==''||postcode == undefined||postcode ==null)?'red':'thide'">*</em>邮编：</label>
+					<input type="text" name="postcode" ng-model="postcode" placeholder="" required>
+					<label></label>
+				</li>
+				<li>
+					<label><em ng-class="(oa ==''||oa == undefined||oa ==null)?'red':'thide'">*</em>办公地址：</label>
+					<input type="text" name="oa" ng-model="oa" placeholder="" required>
+					<label></label>
+				</li>
+				<li>
+					<label><em ng-class="(tin ==''||tin == undefined||tin ==null)?'red':'thide'">*</em>纳税人识别号：</label>
+					<input type="text" name="tin" ng-model="tin" placeholder="" required>
+					<label></label>
+				</li>
+				<li>
+					<label><em ng-class="(bank ==''||bank == undefined||bank ==null)?'red':'thide'">*</em>开户行：</label>
+					<input type="text" name="bank" ng-model="bank" placeholder="" required>
+					<label></label>
+				</li>
+				<li>
+					<label>银行地址：</label>
+					<input type="text" name="bankAddress" ng-model="bankAddress" placeholder="" required>
+					<label></label>
+				</li>
+				<li>
+					<label><em ng-class="(isGeneralTaxpayer ==''||isGeneralTaxpayer == undefined||isGeneralTaxpayer ==null)?'red':'thide'">*</em>是否是一般纳税人：</label>
+					<input type="radio" id="yes" class="cbox" name="isGeneralTaxpayery" value="是" ng-model="isGeneralTaxpayer">
+					<label for="yes">是</label>
+					<input type="radio" id="no" class="cbox" name="isGeneralTaxpayern" value="否" ng-model="isGeneralTaxpayer">
+					<label for="no">否</label>
+					<label></label>
+				</li>
+				<li>
+					<label>备注：</label>
+					<textarea rows="5" cols="37" name="ps" ng-model="ps"></textarea>
+				</li>
+			</ul>
+			<div class="clearfix form-actions">
+				<div class="col-md-offset-5 col-md-7">
+					<button class="btn btn-info btn-bold" type="button"  ng-click="submit()" ng-disabled="form.$invalid || (isGeneralTaxpayer ==''||isGeneralTaxpayer == undefined||isGeneralTaxpayer ==null)">
+						<i class="ace-icon fa fa-check bigger-110"></i>
+						保存
+					</button>
+
+					&nbsp; &nbsp; 
+					<button class="btn btn-bold" type="reset" ng-click="backToLogin()">
+						<i class="ace-icon fa fa-reply bigger-110"></i>
+						返回
+					</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+	
+</body>
+</html>

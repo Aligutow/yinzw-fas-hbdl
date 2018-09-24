@@ -1,0 +1,136 @@
+<div class="cbody">
+	<div class="cwarp">
+		<div class="page-content">
+			<div class="page-header">
+				<h1>
+					<a href="#/user/user_list">用户管理</a>
+					<small> <i class="ace-icon fa fa-angle-double-right"></i> 用户新增
+					</small>
+				</h1>
+			</div>
+			<!-- /.page-header -->
+			<div class="row">
+				<div class="col-xs-12">
+					<form class="form-horizontal" role="form" id="addForm" name="addForm" ng-model="addForm"
+						novalidate>
+						
+						<!-- one -->
+						<div class="form-group">
+							<label class="col-xs-3 col-sm-3 control-label no-padding-right">
+								<span class="red">*</span>
+								用户名
+							</label>
+							<div class="col-xs-7 col-sm-7">
+								<input name="account" type="text" placeholder="用户名为必填项......" class="col-xs-9 col-sm-9"
+									ng-model="addItem.account" maxlength="45" ensure-id=""
+									ensure-unique="{{addItem.account}}" required>
+								<i class="ace-icon fa fa-times-circle"
+									ng-show="submitted && addForm.account.$invalid"></i>
+								<i class="ace-icon fa fa-check-circle green" ng-show="addForm.account.$valid"></i>
+								<i class="error" ng-show="submitted && addForm.account.$invalid">
+									<small class="error" ng-show="addForm.account.$error.required">用户名不可为空 </small> 
+								</i>
+								<small class="error" ng-show="addForm.account.$error.unique"> 用户名已存在，请重新输入</small>
+							</div>
+							<div class="space-2"></div>
+						</div>
+						<!-- one -->
+
+						<div class="form-group">
+							<label class="col-xs-3 col-sm-3 control-label no-padding-right"> 姓名 </label>
+							<div class="col-xs-6 col-sm-6">
+								<input name="name" type="text" placeholder="姓名为非必填项......" class="col-xs-9 col-sm-9"
+									ng-model="addItem.username" maxlength="45">
+							</div>
+							<div class="space-3"></div>
+						</div> 
+						
+						
+						
+						
+						<div class="form-group" >
+							<label class="col-xs-3 col-sm-3 control-label no-padding-right">
+								<span class="red">*</span>
+								所属部门
+							</label>
+							<div class="col-xs-6 col-sm-6">
+								<select ng-model="selectedOrg" class="tree-dropdown" ng-options="item.name for item in orgTreeData">
+<!-- 									<option ng-repeat="item in orgTreeData">{{item.name}}</option> -->
+								</select>
+							</div>
+							<div class="space-3"></div>
+						</div>
+<!-- 						<div class="form-group" > -->
+<!-- 							<label class="col-xs-3 col-sm-3 control-label no-padding-right"> -->
+<!-- 								<span class="red">*</span> -->
+<!-- 								所属部门 -->
+<!-- 							</label> -->
+<!-- 							<div class="col-xs-6 col-sm-6"> -->
+<!-- 								<tree-dropdown class="tree-dropdown" data="orgTreeData" selected="selectedOrg"></tree-dropdown> -->
+<!-- 							</div> -->
+<!-- 							<div class="space-3"></div> -->
+<!-- 						</div> -->
+						
+						<!-- 角色树 -->
+						<div class="form-group" >
+							<label class="col-xs-3 col-sm-3 control-label no-padding-right">
+								<span class="red">*</span>
+								角色
+							</label>
+							<div class="col-xs-6 col-sm-6">
+								<tree-dropdown class="tree-dropdown" data="roleTreeData" selected="selectedRole"></tree-dropdown>
+							</div>
+							<div class="space-3"></div>
+						</div>
+						
+						
+						
+						
+						<div class="form-group">
+							<label class="col-xs-3 col-sm-3 control-label no-padding-right"> 是否可用 </label>
+							<div class="col-xs-6 col-sm-6 ">
+								<div class="radio ">
+									<label>
+										<input name="accountState" type="radio" class="ace" value="1" ng-model="addItem.accountState"
+											required />
+										<span class="lbl"> 可用</span>
+									</label>
+									<label>
+										<input name="accountState" type="radio" class="ace" value="0" ng-model="addItem.accountState"
+											required />
+										<span class="lbl">不可用</span>
+									</label>
+								</div>
+							</div>
+							<div class="space-4"></div>
+						</div>
+						
+						
+						
+					</form>
+				</div>
+				<div class="clearfix form-actions">
+					<div class="col-md-offset-3 col-md-7">
+						<button class="btn btn-info btn-bold" type="button" 
+							ng-click="saveAddUser()">
+							<i class="ace-icon fa fa-check bigger-110"></i>
+							保存
+						</button>
+
+						&nbsp; &nbsp; &nbsp;
+						<button class="btn btn-bold" type="reset" ng-click="clearForm()">
+							<i class="ace-icon fa fa-undo bigger-110"></i>
+							重置
+						</button>
+
+						&nbsp; &nbsp; &nbsp;
+						<button class="btn btn-bold" type="reset" ng-click="backToList()">
+							<i class="ace-icon fa fa-reply bigger-110"></i>
+							返回
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

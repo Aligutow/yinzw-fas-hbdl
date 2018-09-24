@@ -1,0 +1,11 @@
+ClearCase CopyAreaDB|4
+vobs\KF491513_GGFW\si-enterprise\si-enterprise-ui\bower_components\angular-file-upload\src\services
+2
+7
+11:FileLikeObject.js|1|153314346c8|60d|8e1bba9b|b6ec6718c782450196d098dec79fd2da|0
+b:FileDrop.js|1|15331434696|cce|565473b3|2a121d9b75584d139d331af255256f55|0
+10:FileDirective.js|1|1533143468b|714|7d05f087|1edaed6033d04629b107948ea70a02a5|0
+d:FileSelect.js|1|153314346d4|810|7f503111|fc207c133d6e4125b4efcb2290841dba|0
+b:FileOver.js|1|153314346cc|512|95135581|4a88eb6c5cf24067bcc9fa710873d353|0
+f:FileUploader.js|1|153314346ee|5afb|f12ec0a|efb656f7d8c24005bf907773051af359|0
+b:FileItem.js|1|153314346b9|1abd|2f8c0ac1|3d5947eec3de4d95a56c707576ff4b35|0

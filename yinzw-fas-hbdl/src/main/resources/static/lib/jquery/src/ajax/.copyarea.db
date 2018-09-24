@@ -1,0 +1,11 @@
+ClearCase CopyAreaDB|4
+vobs\KF491513_GGFW\si-enterprise\si-enterprise-ui\bower_components\jquery\src\ajax
+2
+7
+c:parseJSON.js|1|1533143631a|de|1e744709|256261aedca14df6b73036c5746c22fe|0
+6:xhr.js|1|1533143633b|da0|c2a302aa|730cf36653cf44f4ac1c9da14889504d|0
+8:jsonp.js|1|15331436312|9d4|bfc11f01|661b7589c63b47a2972274ed20b7d2cb|0
+7:load.js|1|15331436316|685|2a8c0349|9a4383a756774952844e7eb60d4bdf2d|0
+3:var|2|0|0|0|74bd9e4d183b4126930f37cdf2daebd9|0
+9:script.js|1|15331436336|4f7|1217c0c|c49e9f6ef41a4a85957dd41ba6c001f1|0
+b:parseXML.js|1|1533143631e|1e5|f2a895db|f6cf5a66e59c454d81d7d1f424d91f40|0
